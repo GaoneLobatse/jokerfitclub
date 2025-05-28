@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JokerFit Club - Your ultimate fitness destination">
+    <title>JokerFit Club | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="JokerFit Club Logo" width="150" height="60">
+                <h1>JokerFit Club</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="workouts.html">Workout Plans</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Transform Your Body, Elevate Your Life</h2>
+            <p>Join JokerFit Club today and start your fitness journey with expert trainers and customized plans.</p>
+            <a href="services.html" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose JokerFit Club?</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Modern Equipment</h3>
+                    <p>State-of-the-art fitness equipment for all your workout needs.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Expert Trainers</h3>
+                    <p>Certified trainers to guide you through your fitness journey.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Personalized Plans</h3>
+                    <p>Custom workout and nutrition plans tailored to your goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Members Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <p>"JokerFit Club changed my life! I've lost 20kg in 3 months with their personalized plan."</p>
+                    <h4>- Sarah Johnson</h4>
+                </div>
+                <div class="testimonial">
+                    <p>"The trainers are amazing and the community is so supportive. Best gym ever!"</p>
+                    <h4>- Michael Chen</h4>
+                </div>
+                <div class="testimonial">
+                    <p>"I love the variety of classes and the clean facilities. Highly recommend!"</p>
+                    <h4>- David Wilson</h4>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About JokerFit</h3>
+                    <p>JokerFit Club is dedicated to helping you achieve your fitness goals through personalized training and nutrition plans.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="workouts.html">Workout Plans</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Fitness St, Health City</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@jokerfitclub.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 JokerFit Club. All Rights Reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu');
+            const navMenu = document.querySelector('nav ul');
+
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('show');
+                    }
+                });
+            });
+
+            if (document.querySelector('.testimonial-slider')) {
+                const testimonials = document.querySelectorAll('.testimonial');
+                const dots = document.querySelectorAll('.dot');
+                let currentTestimonial = 0;
+
+                function showTestimonial(index) {
+                    testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+                    dots.forEach(dot => dot.classList.remove('active'));
+
+                    testimonials[index].classList.add('active');
+                    dots[index].classList.add('active');
+                    currentTestimonial = index;
+                }
+
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => showTestimonial(index));
+                });
+
+                setInterval(() => {
+                    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                    showTestimonial(currentTestimonial);
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>

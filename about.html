@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn more about JokerFit Club and our mission." />
+    <title>About Us | JokerFit Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="JokerFit Club Logo" width="150" height="60">
+                <h1>JokerFit Club</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="workouts.html">Workout Plans</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="about-section">
+        <div class="container">
+            <h2>About JokerFit Club</h2>
+            <p>JokerFit Club was founded with a single mission: to transform lives through fitness. We believe in empowering individuals with the right tools, training, and support to achieve their physical and mental best.</p>
+
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/download.png" alt="Our Gym" />
+                </div>
+                <div class="about-text">
+                    <h3>Our Philosophy</h3>
+                    <p>We take a holistic approach to fitness. It’s not just about lifting weights; it’s about building a lifestyle. Our expert trainers, modern facilities, and vibrant community make fitness enjoyable and sustainable for everyone.</p>
+
+                    <h3>Our Promise</h3>
+                    <p>Whether you're a beginner or an experienced athlete, JokerFit Club is committed to helping you reach your goals in a supportive and motivating environment.</p>
+
+                    <a href="services.html" class="btn">Explore Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About JokerFit</h3>
+                    <p>JokerFit Club is dedicated to helping you achieve your fitness goals through personalized training and nutrition plans.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="workouts.html">Workout Plans</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Fitness St, Health City</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@jokerfitclub.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 JokerFit Club. All Rights Reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.querySelector('.mobile-menu');
+            const navMenu = document.querySelector('nav ul');
+
+            mobileMenuBtn.addEventListener('click', function () {
+                navMenu.classList.toggle('show');
+            });
+
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('show');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
